@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 5px 0;
+            color: #555;
+        }
+        .back-button {
+            padding: 10px 20px;
+            background: #fcb69f;
+            color: white;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .back-button:hover {
+            background: #faa59f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather in <span th:text="${weather.city}"></span>, <span th:text="${weather.sys.country}"></span></h1>
+        <p>Temperature: <span th:text="${weather.main.temp}"></span> °C</p>
+        <p>Feels Like: <span th:text="${weather.main.feels_like}"></span> °C</p>
+        <p>Humidity: <span th:text="${weather.main.humidity}"></span>%</p>
+        <p>Pressure: <span th:text="${weather.main.pressure}"></span> hPa</p>
+        <p>Wind Speed: <span th:text="${weather.wind.speed}"></span> m/s</p>
+        <p>Wind Direction: <span th:text="${weather.wind.deg}"></span>°</p>
+        <p>Cloudiness: <span th:text="${weather.clouds.all}"></span>%</p>
+        <p>Visibility: <span th:text="${weather.visibility}"></span> meters</p>
+        <p>Sunrise: <span th:text="${#dates.format(weather.sys.sunrise * 1000, 'HH:mm:ss')}"></span></p>
+        <p>Sunset: <span th:text="${#dates.format(weather.sys.sunset * 1000, 'HH:mm:ss')}"></span></p>
+        <p>Description: <span th:text="${weather.weather[0].description}"></span></p>
+        <a href="/" class="back-button">Back to Search</a>
+    </div>
+</body>
+</html>

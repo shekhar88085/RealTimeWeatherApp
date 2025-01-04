@@ -1,3 +1,7 @@
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/5995a3b3-4b40-4e4c-baf0-56e4636ebf63" />
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/d7a689cf-b4a3-47bd-82f6-527401bdf87c" />
+
+
 Project Description
 
 This project is a real-time weather dashboard built using Spring Boot, MongoDB, Thymeleaf, HTML, CSS, and OpenWeatherMap API. It allows users to search for weather information of any city and view dynamic results, including temperature, humidity, wind speed, and other details. The system also caches the data in MongoDB for faster responses.
